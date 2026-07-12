@@ -1,3 +1,7 @@
+output "network_manager_verifier_workspace_reachability_analysis_intents_id" {
+  description = "Map of id values across all network_manager_verifier_workspace_reachability_analysis_intents, keyed the same as var.network_manager_verifier_workspace_reachability_analysis_intents"
+  value       = { for k, v in azurerm_network_manager_verifier_workspace_reachability_analysis_intent.network_manager_verifier_workspace_reachability_analysis_intents : k => v.id }
+}
 output "network_manager_verifier_workspace_reachability_analysis_intents_description" {
   description = "Map of description values across all network_manager_verifier_workspace_reachability_analysis_intents, keyed the same as var.network_manager_verifier_workspace_reachability_analysis_intents"
   value       = { for k, v in azurerm_network_manager_verifier_workspace_reachability_analysis_intent.network_manager_verifier_workspace_reachability_analysis_intents : k => v.description }
