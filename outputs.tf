@@ -12,7 +12,7 @@ output "network_manager_verifier_workspace_reachability_analysis_intents_destina
 }
 output "network_manager_verifier_workspace_reachability_analysis_intents_ip_traffic" {
   description = "Map of ip_traffic values across all network_manager_verifier_workspace_reachability_analysis_intents, keyed the same as var.network_manager_verifier_workspace_reachability_analysis_intents"
-  value       = { for k, v in azurerm_network_manager_verifier_workspace_reachability_analysis_intent.network_manager_verifier_workspace_reachability_analysis_intents : k => v.ip_traffic if v.ip_traffic != null && length(v.ip_traffic) > 0 }
+  value       = { for k, v in azurerm_network_manager_verifier_workspace_reachability_analysis_intent.network_manager_verifier_workspace_reachability_analysis_intents : k => one(v.ip_traffic) if v.ip_traffic != null && length(v.ip_traffic) > 0 }
 }
 output "network_manager_verifier_workspace_reachability_analysis_intents_name" {
   description = "Map of name values across all network_manager_verifier_workspace_reachability_analysis_intents, keyed the same as var.network_manager_verifier_workspace_reachability_analysis_intents"
